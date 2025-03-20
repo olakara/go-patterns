@@ -9,4 +9,8 @@ func main() {
 	subject.Attach(&observer2)
 
 	subject.SetMessage("Hello World!")
+
+	subject.Detach(&observer1)
+
+	subject.SetMessage("Hello World Again!")
 }

@@ -13,6 +13,15 @@ func (s *Subject) Attach(o Observer) {
 	s.observers = append(s.observers, o)
 }
 
+func (s *Subject) Detach(o Observer) {
+	for i, observer := range s.observers {
+		if observer == o {
+			s.observers = append(s.observers[:i], s.observers[i+1:]...)
+			break
+		}
+	}
+}
+
 func (s *Subject) SetMessage(message string) {
 	s.message = message
 	s.Notify()
