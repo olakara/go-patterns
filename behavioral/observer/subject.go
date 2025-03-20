@@ -17,7 +17,7 @@ func (s *Subject) Detach(o Observer) {
 	for i, observer := range s.observers {
 		if observer == o {
 			s.observers = append(s.observers[:i], s.observers[i+1:]...)
-			break
+			return
 		}
 	}
 }
